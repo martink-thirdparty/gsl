@@ -6,7 +6,7 @@ if(TARGET gsl)
   return()
 endif()
 
-# main
+# project
 
 project(
   gsl
@@ -19,8 +19,6 @@ add_library(gsl INTERFACE)
 
 # SDK
 
-include(GNUInstallDirs)
-
 target_include_directories(
-  gsl INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/vanilla/include>
-                $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+  ${PROJECT_NAME}
+  INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/vanilla/include>)
